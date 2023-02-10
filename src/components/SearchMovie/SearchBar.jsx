@@ -5,7 +5,7 @@ import {
   SearchForm,
   SearchFormButton,
   SearchFormInput,
-} from './SearchMovie.styled';
+} from './SearchBar.styled';
 
 export const SearchMovie = ({ onSearch }) => {
   const handleSubmit = event => {
