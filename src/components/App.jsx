@@ -4,8 +4,8 @@ import { Header, Link } from './Header/Header.styled';
 import { Home } from '../pages/Home';
 import { Movies } from '../pages/Movies';
 import { CurrentMovie } from '../pages/CurrentMovie/CurrentMovie';
-import { Cast } from '../pages/CurrentMovie/Cast';
-import { Reviews } from '../pages/CurrentMovie/Reviews';
+import { Cast } from '../components/Movie/Cast/Cast';
+import { Reviews } from '../components/Movie/Reviews/Reviews';
 
 export const App = () => {
   return (

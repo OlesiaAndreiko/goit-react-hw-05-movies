@@ -11,7 +11,7 @@ export const CurrentMovie = () => {
         width="340px"
         alt="pets cats"
       />
-      <h3>Overwiev</h3>
+      <h3>Overview</h3>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore ipsa
         molestias corporis expedita modi harum sed amet placeat numquam

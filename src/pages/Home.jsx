@@ -6,31 +6,31 @@ export const Home = () => {
       <h2>Trending today</h2>
       <ul>
         <li>
-          <Link to="/movies/currentmovie">Fiim1</Link>
+          <Link to="/movies/currentmovie">Film1</Link>
         </li>
         <li>
-          <Link to="/movies/currentmovie">Fiim2</Link>
+          <Link to="/movies/currentmovie">Film2</Link>
         </li>
         <li>
-          <Link to="/movies/currentmovie">Fiim3</Link>
+          <Link to="/movies/currentmovie">Film3</Link>
         </li>
         <li>
-          <Link to="/movies/currentmovie">Fiim4</Link>
+          <Link to="/movies/currentmovie">Film4</Link>
         </li>
         <li>
-          <Link to="/movies/currentmovie">Fiim5</Link>
+          <Link to="/movies/currentmovie">Film5</Link>
         </li>
         <li>
-          <Link to="/movies/currentmovie">Fiim6</Link>
+          <Link to="/movies/currentmovie">Film6</Link>
         </li>
         <li>
-          <Link to="/movies/currentmovie">Fiim7</Link>
+          <Link to="/movies/currentmovie">Film7</Link>
         </li>
         <li>
-          <Link to="/movies/currentmovie">Fiim8</Link>
+          <Link to="/movies/currentmovie">Film8</Link>
         </li>
         <li>
-          <Link to="/movies/currentmovie">Fiim9</Link>
+          <Link to="/movies/currentmovie">Film9</Link>
         </li>
       </ul>
     </main>
