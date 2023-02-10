@@ -1,32 +1,22 @@
+import { Link } from 'react-router-dom';
+
 export const MovieSearchList = () => {
     return (
         <ul>
         <li>
-          <a href="">Batman1</a>
+          <Link to="">Batman1</Link>
         </li>
         <li>
-          <a href="">Batman2</a>
+          <Link to="">Batman2</Link>
         </li>
         <li>
-          <a href="">Batman3</a>
+          <Link to="">Batman3</Link>
         </li>
         <li>
-          <a href="">Batman4</a>
+          <Link to="">Batman4</Link>
         </li>
         <li>
-          <a href="">Batman5</a>
-        </li>
-        <li>
-          <a href="">Batman6</a>
-        </li>
-        <li>
-          <a href="">Batman7</a>
-        </li>
-        <li>
-          <a href="">Batman8</a>
-        </li>
-        <li>
-          <a href="">Batman9</a>
+          <Link to="">Batman5</Link>
         </li>
       </ul>
     )
