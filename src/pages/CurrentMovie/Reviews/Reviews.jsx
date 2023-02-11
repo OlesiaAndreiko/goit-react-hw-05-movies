@@ -1,5 +1,6 @@
 export const Reviews = () => {
-  <ul>
+  return (
+    <ul>
     <li>
       <h3>Author1</h3>
       <p>
@@ -36,5 +37,7 @@ export const Reviews = () => {
         nostrum molestiae obcaecati.
       </p>
     </li>
-  </ul>;
+  </ul>
+  )
+  
 };
