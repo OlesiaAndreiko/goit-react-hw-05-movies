@@ -38,6 +38,5 @@ export const Cast = () => {
       <p>Name to film</p>
     </li>
   </ul>
-  )
-  
+  )  
 };
