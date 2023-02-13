@@ -1,39 +1,32 @@
 import { Link } from 'react-router-dom';
+import * as TMDB from '../api-service/film-service';
+import { useState, useEffect } from 'react';
 
 export const Home = () => {
+  const [trending, setTrending] = useState([]);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await TMDB.getTrandingMovies();
+        console.log(data);
+        setTrending(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
     <main>
       <h2>Trending today</h2>
       <ul>
-        <li>
-          <Link to="/movies/currentmovie">Film1</Link>
-        </li>
-        <li>
-          <Link to="/movies/currentmovie">Film2</Link>
-        </li>
-        <li>
-          <Link to="/movies/currentmovie">Film3</Link>
-        </li>
-        <li>
-          <Link to="/movies/currentmovie">Film4</Link>
-        </li>
-        <li>
-          <Link to="/movies/currentmovie">Film5</Link>
-        </li>
-        <li>
-          <Link to="/movies/currentmovie">Film6</Link>
-        </li>
-        <li>
-          <Link to="/movies/currentmovie">Film7</Link>
-        </li>
-        <li>
-          <Link to="/movies/currentmovie">Film8</Link>
-        </li>
-        <li>
-          <Link to="/movies/currentmovie">Film9</Link>
-        </li>
+        {trending.map(film => (
+          <li key={film.id}>
+            <Link to={`/movies/${film.id}`}>{film.title || film.name}</Link>
+          </li>
+        ))}
       </ul>
     </main>
   );

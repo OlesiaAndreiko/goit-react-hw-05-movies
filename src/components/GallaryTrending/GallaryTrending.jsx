@@ -1,4 +1,4 @@
-import * as ImageService from '../../api-service/film-service';
+// import * as ImageService from '../../api-service/film-service';
 
 export const GallaryTrenging = () => {
 //   const fetchData = async () => {
@@ -12,7 +12,7 @@ export const GallaryTrenging = () => {
 
 //   fetchData();
 
-  ImageService.getTrandingMovies().then(data =>
-      console.log(data)
-  )
+//   ImageService.getTrandingMovies().then(data =>
+//       console.log(data)
+//   )
 };

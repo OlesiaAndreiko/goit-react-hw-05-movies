@@ -4,14 +4,15 @@ const API_KEY = 'bcffd2e7e681aa94b83a55719216dc7b';
 axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 axios.defaults.params = {
     api_key: API_KEY,
+    // language: 'en-US',
   };
 
 export const getTrandingMovies = async () => {
   const response = await axios.get(
     `trending/all/day`
   );
-  console.log(response)
-  return response;
+//   console.log(response.data.results)
+  return response.data.results;
 }
 
 export const getSearchMovie = async (query) => {
@@ -24,10 +25,10 @@ export const getSearchMovie = async (query) => {
 
 export const getMovieDetails = async (movieId) => {
     const response = await axios.get(
-        `search/movie?movie/${movieId}`
+        `movie/${movieId}`
       );
-      console.log(response)
-      return response;
+      // console.log(response.data)
+      return response.data;
 }
 
 export const getMovieRoles = async (movieId) => {
@@ -46,12 +47,8 @@ export const getMovieReviews = async (movieId) => {
       return response;
 }
 
-
-getTrandingMovies().then(resp => resp.json).then(data => console.log(data))
-
-
-async function foo() {
-    const a = await getTrandingMovies()
-    console.log(a)
-}
-foo()
+export const getProductById = (number) => {
+    const id = number;
+    console.log(id)
+    return id
+  };
