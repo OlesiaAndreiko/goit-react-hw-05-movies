@@ -16,12 +16,7 @@ export const CurrentMovie = () => {
       }
       try {
         const data = await TMDB.getMovieDetails(movieId);
-        console.log(data);
-
-        console.log(data.genres);
-        const genre = data.genres.map(({ name }) => name).join(' ');
-        console.log(genre);
-
+        // console.log(data);
         setDetalisMovie(data);
       } catch (error) {
         console.log(error);
@@ -30,7 +25,7 @@ export const CurrentMovie = () => {
     fetchData();
   }, [movieId]);
 
-  const { title, poster_path, vote_average, overview, genres, backdrop_path } = detalisMovie;
+  const { title, poster_path, vote_average, overview, genres} = detalisMovie;
 
   return (
     <div>
@@ -65,7 +60,7 @@ export const CurrentMovie = () => {
           <StyledLink to="reviews">Reviews</StyledLink>
         </li>
       </ul>
-      <Outlet />
+      <Outlet id={movieId}/>
     </div>
   );
 };
