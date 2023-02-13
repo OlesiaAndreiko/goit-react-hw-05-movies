@@ -29,7 +29,7 @@ export const CurrentMovie = () => {
     fetchData();
   }, [movieId]);
 
-  const { title, poster_path, vote_average, overview, genres } = detalisMovie;
+  const { title, poster_path, vote_average, overview} = detalisMovie;
 
   return (
     <div>
