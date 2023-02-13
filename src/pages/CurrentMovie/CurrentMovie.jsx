@@ -1,6 +1,7 @@
 import { Link, Outlet, useParams } from 'react-router-dom';
 import { StyledLink } from './CurrentMovie.styled';
 import * as TMDB from '../../api-service/film-service';
+import defaulImage from '../../helpers/dog-loader.jpg'
 import { useState, useEffect } from 'react';
 
 export const CurrentMovie = () => {
@@ -18,7 +19,7 @@ export const CurrentMovie = () => {
         console.log(data);
 
         console.log(data.genres);
-        const genre = data.genres.map(({name}) => name).join(' ');
+        const genre = data.genres.map(({ name }) => name).join(' ');
         console.log(genre);
 
         setDetalisMovie(data);
@@ -29,7 +30,7 @@ export const CurrentMovie = () => {
     fetchData();
   }, [movieId]);
 
-  const { title, poster_path, vote_average, overview} = detalisMovie;
+  const { title, poster_path, vote_average, overview, genres, backdrop_path } = detalisMovie;
 
   return (
     <div>
@@ -37,14 +38,22 @@ export const CurrentMovie = () => {
       {
         <>
           <h2>{title}</h2>
-          <img src={`http://image.tmdb.org/t/p/w500${poster_path}`} width="340px" alt={title} />
+          <img
+            src={ 
+              poster_path
+              ? `http://image.tmdb.org/t/p/w500${poster_path}`
+              : defaulImage
+            }
+            width="340px"
+            alt={title}
+          />
           <p>
             User score: <span>{vote_average} %</span>
           </p>
           <h3>Overview</h3>
           <p>{overview}</p>
           <h3>Genres</h3>
-          {/* <p>{genres.map(({name}) => name).join(' ')}</p> */}
+          {genres && <p>{genres.map(({ name }) => name).join(' ')}</p>}
           <p>Additional information</p>
         </>
       }
@@ -60,6 +69,5 @@ export const CurrentMovie = () => {
     </div>
   );
 };
-
 
 // https://cdn.pixabay.com/photo/2021/10/27/13/15/cat-6747298_960_720.jpg
