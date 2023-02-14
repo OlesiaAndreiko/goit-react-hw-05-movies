@@ -8,6 +8,7 @@ import {
 } from './SearchBar.styled';
 
 export const SearchMovie = ({ onSearch }) => {
+
   const handleSubmit = event => {
     event.preventDefault();
 

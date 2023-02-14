@@ -1,17 +1,14 @@
 import { SearchMovie } from '../components/SearchMovie/SearchBar';
 import * as TMDB from '../api-service/film-service';
 import defaulImage from '../helpers/cat-6747298_960_720.jpg'
-import { Link} from 'react-router-dom';
+import { Link, useSearchParams} from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 export const Movies = () => {
-
-  const [query, setQuery] = useState('');
   const [movieList, setMovieList] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  // const [searchParams] = useSearchParams();
-  // const name = searchParams.get("name");
-
+  const query = searchParams.get("searchWord") ?? "";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,15 +29,9 @@ export const Movies = () => {
     
   }, [query]);
 
-  
-  const getQuery = searchWord => {
-    setMovieList([]);
-    
-    if (!searchWord) {;
-      setQuery('');
-      return;
-    }
-    setQuery(searchWord);
+  const getQuery = (searchWord) => {
+    const nextParams = searchWord !== "" ? { searchWord } : {};
+    setSearchParams(nextParams);
   };
 
   return (

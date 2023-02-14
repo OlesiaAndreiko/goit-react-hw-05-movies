@@ -10,7 +10,7 @@ export const Home = () => {
     const fetchData = async () => {
       try {
         const data = await TMDB.getTrandingMovies();
-        console.log(data);
+        // console.log(data);
         setTrending(data);
       } catch (error) {
         console.log(error);
