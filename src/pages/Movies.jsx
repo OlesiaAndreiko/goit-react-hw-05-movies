@@ -41,7 +41,7 @@ export const Movies = () => {
         {movieList?
         movieList.map(film =>
           <li key={film.id}>
-          <Link to={`/movies/${film.id}`}>{film.title || film.name}
+          <Link to={`/movies/${film.id}`} state={{ from: `/movies?searchWord=${query}`}} >{film.title || film.name}
           <img
                 src={
                   film.backdrop_path

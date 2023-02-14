@@ -1,4 +1,4 @@
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
 import { StyledLink } from './CurrentMovie.styled';
 import * as TMDB from '../../api-service/film-service';
 import defaulImage from '../../helpers/dog-loader.jpg'
@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 export const CurrentMovie = () => {
   const [detalisMovie, setDetalisMovie] = useState([]);
   const { movieId } = useParams();
-  // console.log(movieId)
+  const location = useLocation();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,7 +29,7 @@ export const CurrentMovie = () => {
 
   return (
     <div>
-      <Link to="">&#8678;Go to back</Link>
+      <Link to={location.state.from} >&#8678;Go to back</Link>
       {
         <>
           <h2>{title}</h2>

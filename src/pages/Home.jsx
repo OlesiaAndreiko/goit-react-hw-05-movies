@@ -25,7 +25,7 @@ export const Home = () => {
       <ul>
         {trending.map(film => (
           <li key={film.id}>
-            <Link to={`/movies/${film.id}`}>{film.title || film.name}
+            <Link to={`/movies/${film.id}`} state={{ from: "/"}}>{film.title || film.name}
             <img
                 src={
                   film.backdrop_path
