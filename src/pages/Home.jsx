@@ -1,7 +1,14 @@
 import * as TMDB from '../api-service/film-service';
-import defaulImage from '../helpers/cat-6747298_960_720.jpg'
+import defaulImage from '../helpers/cat-6747298_960_720.jpg';
 import { useState, useEffect } from 'react';
-import {HomeCaption, TrendingList, TrendingItem, StyledLink, PreviewPoster, NameMovie } from "./Home.styled"
+import {
+  HomeCaption,
+  TrendingList,
+  TrendingItem,
+  StyledLink,
+  PreviewPoster,
+  NameMovie,
+} from './Home.styled';
 
 const Home = () => {
   const [trending, setTrending] = useState([]);
@@ -25,8 +32,8 @@ const Home = () => {
       <TrendingList>
         {trending.map(film => (
           <TrendingItem key={film.id}>
-            <StyledLink to={`/movies/${film.id}`} state={{ from: "/"}}>
-            <PreviewPoster
+            <StyledLink to={`/movies/${film.id}`} state={{ from: '/' }}>
+              <PreviewPoster
                 src={
                   film.backdrop_path
                     ? `http://image.tmdb.org/t/p/w500${film.backdrop_path}`
@@ -35,7 +42,7 @@ const Home = () => {
                 alt={film.title || film.name}
               />
               <NameMovie>{film.title || film.name}</NameMovie>
-              </StyledLink>
+            </StyledLink>
           </TrendingItem>
         ))}
       </TrendingList>

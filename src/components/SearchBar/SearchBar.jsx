@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import {
-  Header,
   SearchForm,
   SearchFormButton,
   SearchFormInput,
@@ -19,14 +18,12 @@ export const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <Header>
       <SearchForm onSubmit={handleSubmit}>
         <SearchFormInput name="query" />
         <SearchFormButton>
           <Icon />
         </SearchFormButton>
       </SearchForm>
-    </Header>
   );
 };
 

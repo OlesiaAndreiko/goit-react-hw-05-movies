@@ -31,7 +31,7 @@ export const MovieDescription= styled.div`
   color: #250c27;
 ` 
 export const MovieCaption = styled.h2`
-/* color: #250c27; */
+
 `
 
 export const StyledLink = styled(NavLink)`

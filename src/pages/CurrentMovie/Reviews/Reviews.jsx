@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import * as TMDB from '../../../api-service/film-service';
+import {ReviewsList, TextReviewsList} from "./Reviews.styled"
 
 const Reviews = () => {
   const { movieId } = useParams();
@@ -24,18 +25,18 @@ const Reviews = () => {
   }, [movieId]);
 
   return (
-    <ul>
+    <ReviewsList>
       {reviews ? (
         reviews.map(({ id, author, content }) => (
           <li key={id}>
             <h3>{author}</h3>
-            <p>{content}</p>
+            <TextReviewsList>{content}</TextReviewsList>
           </li>
         ))
       ) : (
         <p>We don`t have any reviews for this movie.</p>
       )}
-    </ul>
+    </ReviewsList>
   );
 };
 

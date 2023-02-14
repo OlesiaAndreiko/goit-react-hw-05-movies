@@ -23,11 +23,21 @@ export const Header = styled.header`
 export const SearchForm = styled.form.attrs({ autoComplete: 'off' })`
   display: flex;
   align-items: center;
+  min-height: 54px;
   width: 100%;
   max-width: 600px;
   background-color: #fff;
-  border-radius: 3px;
+  border-radius: 4px;
+  /* border: 1px solid rgb(37, 12, 39); */
   overflow: hidden;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+
+  &:hover {
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  }
 `;
 
 export const SearchFormInput = styled.input.attrs({
@@ -42,10 +52,11 @@ export const SearchFormInput = styled.input.attrs({
   border: none;
   outline: none;
   padding: 4px;
+  padding-left: 10px;
 
   &::placeholder {
     font: inherit;
-    font-size: 22px;
+    font-size: 20px;
   }
 `;
 
@@ -54,8 +65,8 @@ position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border: transparent;
   opacity: 0.6;
   padding: 10px;

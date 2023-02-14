@@ -1,17 +1,13 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-export const HomeCaption = styled.h2`
-color: #141314;
-`
-
-export const TrendingList = styled.ul`
+export const SearchList = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 
 `;
-export const TrendingItem = styled.li`
+export const SearchItem = styled.li`
   display: flex;
   align-items: center;
   width: 250px;

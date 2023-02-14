@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import defaulImage from '../../../helpers/cats-4945658_960_720.png';
 import { useEffect, useState } from 'react';
 import * as TMDB from '../../../api-service/film-service';
+import {CastList, CastDescription} from "./Cast.styled"
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -25,7 +26,7 @@ const Cast = () => {
   }, [movieId]);
 
   return (
-    <ul>
+    <CastList>
       {casts
         ? casts.map(({ id, profile_path, original_name, character }) => (
             <li key={id}>
@@ -38,12 +39,12 @@ const Cast = () => {
                 width="100px"
                 alt={original_name}
               />
-              <p>{original_name}</p>
-              <p>{character}</p>
+              <CastDescription>{original_name}</CastDescription>
+              <CastDescription>{character}</CastDescription>
             </li>
           ))
         : null}
-    </ul>
+    </CastList>
   );
 };
 
