@@ -1,7 +1,9 @@
 import { SearchBar } from '../../components/SearchBar/SearchBar';
 import * as TMDB from '../../api-service/film-service';
 import defaulImage from '../../image/cat-6747298_960_720.jpg';
-import toast, { Toaster } from 'react-hot-toast';
+// import toast, { Toaster } from 'react-hot-toast';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import {
@@ -23,6 +25,11 @@ const Movies = () => {
       try {
         const data = await TMDB.getSearchMovie(query);
         // console.log(data);
+
+        if (!data.length) {
+          toast.info('Nothing found for your query.');
+          return
+        }
 
         setMovieList(data);
       } catch (error) {
@@ -67,7 +74,7 @@ const Movies = () => {
             ))
           : null}
       </SearchList>
-      <Toaster />
+      <ToastContainer theme="colored" />
     </main>
   );
 };
