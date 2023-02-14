@@ -1,6 +1,6 @@
 import { SearchBar } from '../../components/SearchBar/SearchBar';
 import * as TMDB from '../../api-service/film-service';
-import defaulImage from '../../helpers/cat-6747298_960_720.jpg';
+import defaulImage from '../../image/cat-6747298_960_720.jpg';
 import toast, { Toaster } from 'react-hot-toast';
 import { useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';

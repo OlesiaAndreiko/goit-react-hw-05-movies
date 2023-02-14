@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { Outlet, useParams, useLocation } from 'react-router-dom';
 import { TiArrowBackOutline } from 'react-icons/ti';
 import * as TMDB from '../../api-service/film-service';
-import defaulImage from '../../helpers/dog-loader.jpg';
+import defaulImage from '../../image/dog-loader.jpg';
 import { useState, useEffect } from 'react';
 import {
   StyledLink,
@@ -13,7 +13,7 @@ import {
   DetalisList,
 } from './MovieDetalis.styled';
 
-const CurrentMovie = () => {
+const MovieDetalis = () => {
   const [detalisMovie, setDetalisMovie] = useState([]);
   const { movieId } = useParams();
   const location = useLocation();
@@ -93,4 +93,4 @@ const CurrentMovie = () => {
   );
 };
 
-export default CurrentMovie;
+export default MovieDetalis;

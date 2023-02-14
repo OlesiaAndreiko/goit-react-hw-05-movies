@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import defaulImage from '../../../helpers/cats-4945658_960_720.png';
+import defaulImage from '../../../image/cats-4945658_960_720.png';
 import { useEffect, useState } from 'react';
 import * as TMDB from '../../../api-service/film-service';
 import { CastList, CastDescription } from './Cast.styled';
