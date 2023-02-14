@@ -1,10 +1,10 @@
 // import PropTypes from 'prop-types';
-import { ImSearch } from 'react-icons/im';
 import {
   Header,
   SearchForm,
   SearchFormButton,
   SearchFormInput,
+  Icon,
 } from './SearchBar.styled';
 
 export const SearchMovie = ({ onSearch }) => {
@@ -22,7 +22,7 @@ export const SearchMovie = ({ onSearch }) => {
       <SearchForm onSubmit={handleSubmit}>
         <SearchFormInput name="query" />
         <SearchFormButton>
-          <ImSearch size={20} />
+          <Icon />
         </SearchFormButton>
       </SearchForm>
     </Header>

@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import defaulImage from '../../../helpers/cats-4945658_960_720.png'
+import defaulImage from '../../../helpers/cats-4945658_960_720.png';
 import { useEffect, useState } from 'react';
 import * as TMDB from '../../../api-service/film-service';
 
@@ -30,11 +30,11 @@ export const Cast = () => {
         ? casts.map(({ id, profile_path, original_name, character }) => (
             <li key={id}>
               <img
-                src={ 
+                src={
                   profile_path
-                  ? `http://image.tmdb.org/t/p/w500${profile_path}`
-                  : defaulImage
-                } 
+                    ? `http://image.tmdb.org/t/p/w500${profile_path}`
+                    : defaulImage
+                }
                 width="100px"
                 alt={original_name}
               />

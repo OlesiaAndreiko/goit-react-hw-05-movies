@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { ImSearch } from 'react-icons/im';
 
 export const Header = styled.header`
   top: 0;
@@ -28,7 +29,28 @@ export const SearchForm = styled.form.attrs({ autoComplete: 'off' })`
   border-radius: 3px;
   overflow: hidden;
 `;
+
+export const SearchFormInput = styled.input.attrs({
+  type: 'text',
+  placeholder: 'Search movies...'
+})`
+  display: inline-block;
+  width: 100%;
+  height: 30px;
+  font: inherit;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  padding: 4px;
+
+  &::placeholder {
+    font: inherit;
+    font-size: 22px;
+  }
+`;
+
 export const SearchFormButton = styled.button.attrs({ type: 'submit' })`
+position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,21 +68,10 @@ export const SearchFormButton = styled.button.attrs({ type: 'submit' })`
   }
 `;
 
-export const SearchFormInput = styled.input.attrs({
-  type: 'text',
-  placeholder: 'Search images and photos'
-})`
-  display: inline-block;
-  width: 100%;
-  height: 30px;
-  font: inherit;
-  font-size: 20px;
-  border: none;
-  outline: none;
-  padding: 4px;
-
-  &::placeholder {
-    font: inherit;
-    font-size: 22px;
-  }
+export const Icon = styled(ImSearch)`
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 30%;
+  left: 30%;
 `;

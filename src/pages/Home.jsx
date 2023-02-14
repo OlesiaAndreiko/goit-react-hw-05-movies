@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import * as TMDB from '../api-service/film-service';
+import defaulImage from '../helpers/cat-6747298_960_720.jpg'
 import { useState, useEffect } from 'react';
 
 export const Home = () => {
@@ -24,7 +25,16 @@ export const Home = () => {
       <ul>
         {trending.map(film => (
           <li key={film.id}>
-            <Link to={`/movies/${film.id}`}>{film.title || film.name}</Link>
+            <Link to={`/movies/${film.id}`}>{film.title || film.name}
+            <img
+                src={
+                  film.backdrop_path
+                    ? `http://image.tmdb.org/t/p/w500${film.backdrop_path}`
+                    : defaulImage
+                }
+                width="150px"
+                alt={film.title || film.name}
+              /></Link>
           </li>
         ))}
       </ul>
