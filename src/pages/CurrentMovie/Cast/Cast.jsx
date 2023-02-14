@@ -3,7 +3,7 @@ import defaulImage from '../../../helpers/cats-4945658_960_720.png';
 import { useEffect, useState } from 'react';
 import * as TMDB from '../../../api-service/film-service';
 
-export const Cast = () => {
+const Cast = () => {
   const { movieId } = useParams();
   const [casts, setCasts] = useState([]);
 
@@ -46,3 +46,5 @@ export const Cast = () => {
     </ul>
   );
 };
+
+export default Cast;

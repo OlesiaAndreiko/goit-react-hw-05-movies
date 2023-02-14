@@ -4,7 +4,7 @@ import defaulImage from '../helpers/cat-6747298_960_720.jpg'
 import { Link, useSearchParams} from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-export const Movies = () => {
+const Movies = () => {
   const [movieList, setMovieList] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -59,3 +59,4 @@ export const Movies = () => {
   );
 };
 
+export default Movies;

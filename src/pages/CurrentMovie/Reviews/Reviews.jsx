@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import * as TMDB from '../../../api-service/film-service';
 
-export const Reviews = () => {
+const Reviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
 
@@ -38,3 +38,5 @@ export const Reviews = () => {
     </ul>
   );
 };
+
+export default Reviews; 

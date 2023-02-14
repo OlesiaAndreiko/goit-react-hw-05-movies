@@ -3,7 +3,7 @@ import * as TMDB from '../api-service/film-service';
 import defaulImage from '../helpers/cat-6747298_960_720.jpg'
 import { useState, useEffect } from 'react';
 
-export const Home = () => {
+const Home = () => {
   const [trending, setTrending] = useState([]);
 
   useEffect(() => {
@@ -41,3 +41,5 @@ export const Home = () => {
     </main>
   );
 };
+
+export default Home;

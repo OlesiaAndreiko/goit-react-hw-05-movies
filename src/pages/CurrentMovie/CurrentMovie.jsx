@@ -1,14 +1,15 @@
+import { Suspense } from 'react';
 import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
 import { StyledLink } from './CurrentMovie.styled';
 import * as TMDB from '../../api-service/film-service';
-import defaulImage from '../../helpers/dog-loader.jpg'
+import defaulImage from '../../helpers/dog-loader.jpg';
 import { useState, useEffect } from 'react';
 
-export const CurrentMovie = () => {
+const CurrentMovie = () => {
   const [detalisMovie, setDetalisMovie] = useState([]);
   const { movieId } = useParams();
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? "/"
+  const backLinkHref = location.state?.from ?? '/';
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,19 +27,19 @@ export const CurrentMovie = () => {
     fetchData();
   }, [movieId]);
 
-  const { title, poster_path, vote_average, overview, genres} = detalisMovie;
+  const { title, poster_path, vote_average, overview, genres } = detalisMovie;
 
   return (
-    <div>
-      <Link to={backLinkHref} >&#8678;Go to back</Link>
+    <main>
+      <Link to={backLinkHref}>&#8678;Go to back</Link>
       {
         <>
           <h2>{title}</h2>
           <img
-            src={ 
+            src={
               poster_path
-              ? `http://image.tmdb.org/t/p/w500${poster_path}`
-              : defaulImage
+                ? `http://image.tmdb.org/t/p/w500${poster_path}`
+                : defaulImage
             }
             width="340px"
             alt={title}
@@ -55,14 +56,21 @@ export const CurrentMovie = () => {
       }
       <ul>
         <li>
-          <StyledLink to="cast" state={{ from: "/"}}>Cast</StyledLink>
+          <StyledLink to="cast" state={{ from: '/' }}>
+            Cast
+          </StyledLink>
         </li>
         <li>
-          <StyledLink to="reviews" state={{ from: "/"}}>Reviews</StyledLink>
+          <StyledLink to="reviews" state={{ from: '/' }}>
+            Reviews
+          </StyledLink>
         </li>
       </ul>
-      <Outlet id={movieId}/>
-    </div>
+      <Suspense fallback={<div>Loading detalis...</div>}>
+        <Outlet id={movieId} />
+      </Suspense>
+    </main>
   );
 };
 
+export default CurrentMovie;
