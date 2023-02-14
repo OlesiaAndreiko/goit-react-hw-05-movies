@@ -13,7 +13,7 @@ import {
   MovieDescription,
   TextDescription,
   DetalisList,
-} from './CurrentMovie.styled';
+} from './MovieDetalis.styled';
 
 const CurrentMovie = () => {
   const [detalisMovie, setDetalisMovie] = useState([]);

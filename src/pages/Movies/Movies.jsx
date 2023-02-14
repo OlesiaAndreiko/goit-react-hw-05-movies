@@ -1,6 +1,7 @@
-import { SearchBar } from '../components/SearchBar/SearchBar';
-import * as TMDB from '../api-service/film-service';
-import defaulImage from '../helpers/cat-6747298_960_720.jpg';
+import { SearchBar } from '../../components/SearchBar/SearchBar';
+import * as TMDB from '../../api-service/film-service';
+import defaulImage from '../../helpers/cat-6747298_960_720.jpg';
+import toast, { Toaster } from 'react-hot-toast';
 import { useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import {
@@ -26,6 +27,7 @@ const Movies = () => {
         setMovieList(data);
       } catch (error) {
         console.log(error);
+        toast.error("Something is wrong, try again.");
       }
     };
 
@@ -35,7 +37,7 @@ const Movies = () => {
   }, [query]);
 
   const getQuery = searchWord => {
-    const nextParams = searchWord !== '' ? { searchWord } : {};
+    const nextParams = searchWord !== '' ? { searchWord } : {}
     setSearchParams(nextParams);
   };
 
@@ -65,6 +67,7 @@ const Movies = () => {
             ))
           : null}
       </SearchList>
+      <Toaster/> 
     </main>
   );
 };
