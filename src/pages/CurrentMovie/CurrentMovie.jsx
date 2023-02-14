@@ -8,6 +8,7 @@ export const CurrentMovie = () => {
   const [detalisMovie, setDetalisMovie] = useState([]);
   const { movieId } = useParams();
   const location = useLocation();
+  const backLinkHref = location.state?.from ?? "/"
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,7 +30,7 @@ export const CurrentMovie = () => {
 
   return (
     <div>
-      <Link to={location.state.from} >&#8678;Go to back</Link>
+      <Link to={backLinkHref} >&#8678;Go to back</Link>
       {
         <>
           <h2>{title}</h2>
@@ -54,10 +55,10 @@ export const CurrentMovie = () => {
       }
       <ul>
         <li>
-          <StyledLink to="cast">Cast</StyledLink>
+          <StyledLink to="cast" state={{ from: "/"}}>Cast</StyledLink>
         </li>
         <li>
-          <StyledLink to="reviews">Reviews</StyledLink>
+          <StyledLink to="reviews" state={{ from: "/"}}>Reviews</StyledLink>
         </li>
       </ul>
       <Outlet id={movieId}/>
