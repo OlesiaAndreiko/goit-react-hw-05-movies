@@ -6,7 +6,6 @@ axios.defaults.params = {
     api_key: API_KEY,
     language: 'en-US',
     include_adult: false,
-    // limit: 40,
   };
 
 export const getTrandingMovies = async () => {

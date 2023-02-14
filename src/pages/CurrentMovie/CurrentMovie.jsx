@@ -1,9 +1,19 @@
 import { Suspense } from 'react';
-import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
-import { StyledLink } from './CurrentMovie.styled';
+import { Outlet, useParams, useLocation } from 'react-router-dom';
+import { TiArrowBackOutline } from 'react-icons/ti';
 import * as TMDB from '../../api-service/film-service';
 import defaulImage from '../../helpers/dog-loader.jpg';
 import { useState, useEffect } from 'react';
+import {
+  StyledLink,
+  BackLink,
+  MovieCaption,
+  MovieCard,
+  MoviePoster,
+  MovieDescription,
+  TextDescription,
+  DetalisList,
+} from './CurrentMovie.styled';
 
 const CurrentMovie = () => {
   const [detalisMovie, setDetalisMovie] = useState([]);
@@ -31,41 +41,55 @@ const CurrentMovie = () => {
 
   return (
     <main>
-      <Link to={backLinkHref}>&#8678;Go to back</Link>
+      <BackLink to={backLinkHref}>
+        <TiArrowBackOutline size={24} />
+        Go to back
+      </BackLink>
+
       {
         <>
-          <h2>{title}</h2>
-          <img
-            src={
-              poster_path
-                ? `http://image.tmdb.org/t/p/w500${poster_path}`
-                : defaulImage
-            }
-            width="340px"
-            alt={title}
-          />
-          <p>
-            User score: <span>{vote_average} %</span>
-          </p>
-          <h3>Overview</h3>
-          <p>{overview}</p>
-          <h3>Genres</h3>
-          {genres && <p>{genres.map(({ name }) => name).join(' ')}</p>}
-          <p>Additional information</p>
+          <MovieCard>
+            <MoviePoster>
+              <img
+                src={
+                  poster_path
+                    ? `http://image.tmdb.org/t/p/w500${poster_path}`
+                    : defaulImage
+                }
+                width="340px"
+                alt={title}
+              />
+            </MoviePoster>
+            <MovieDescription>
+              <MovieCaption>{title}</MovieCaption>
+              <TextDescription>
+                User score: <span>{vote_average} %</span>
+              </TextDescription>
+              <h3>Overview</h3>
+              <TextDescription>{overview}</TextDescription>
+              <h3>Genres</h3>
+              {genres && (
+                <TextDescription>
+                  {genres.map(({ name }) => name).join(' ')}
+                </TextDescription>
+              )}
+            </MovieDescription>
+          </MovieCard>
+          <TextDescription>Additional information</TextDescription>
         </>
       }
-      <ul>
-        <li>
+      <DetalisList>
+        <li key="cast">
           <StyledLink to="cast" state={{ from: '/' }}>
             Cast
           </StyledLink>
         </li>
-        <li>
+        <li key="reviews">
           <StyledLink to="reviews" state={{ from: '/' }}>
             Reviews
           </StyledLink>
         </li>
-      </ul>
+      </DetalisList>
       <Suspense fallback={<div>Loading detalis...</div>}>
         <Outlet id={movieId} />
       </Suspense>

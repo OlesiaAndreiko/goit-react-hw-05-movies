@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {
   Header,
   SearchForm,
@@ -7,7 +7,7 @@ import {
   Icon,
 } from './SearchBar.styled';
 
-export const SearchMovie = ({ onSearch }) => {
+export const SearchBar = ({ onSearch }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -29,3 +29,7 @@ export const SearchMovie = ({ onSearch }) => {
     </Header>
   );
 };
+
+SearchBar.propTypes ={
+  onSearch: PropTypes.func.isRequired,
+}

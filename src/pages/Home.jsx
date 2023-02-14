@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
 import * as TMDB from '../api-service/film-service';
 import defaulImage from '../helpers/cat-6747298_960_720.jpg'
 import { useState, useEffect } from 'react';
+import {HomeCaption, TrendingList, TrendingItem, StyledLink, PreviewPoster, NameMovie } from "./Home.styled"
 
 const Home = () => {
   const [trending, setTrending] = useState([]);
@@ -21,23 +21,24 @@ const Home = () => {
 
   return (
     <main>
-      <h2>Trending today</h2>
-      <ul>
+      <HomeCaption>Trending today</HomeCaption>
+      <TrendingList>
         {trending.map(film => (
-          <li key={film.id}>
-            <Link to={`/movies/${film.id}`} state={{ from: "/"}}>{film.title || film.name}
-            <img
+          <TrendingItem key={film.id}>
+            <StyledLink to={`/movies/${film.id}`} state={{ from: "/"}}>
+            <PreviewPoster
                 src={
                   film.backdrop_path
                     ? `http://image.tmdb.org/t/p/w500${film.backdrop_path}`
                     : defaulImage
                 }
-                width="150px"
                 alt={film.title || film.name}
-              /></Link>
-          </li>
+              />
+              <NameMovie>{film.title || film.name}</NameMovie>
+              </StyledLink>
+          </TrendingItem>
         ))}
-      </ul>
+      </TrendingList>
     </main>
   );
 };

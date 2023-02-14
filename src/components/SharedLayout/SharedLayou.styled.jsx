@@ -8,20 +8,24 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.header`
-  top: 0;
-  left: 0;
   position: sticky;
+  top: 0;
+  left: 0;  
+  width: 100%;
   z-index: 1200;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  background-color: #c4dee6;
   padding: 8px 0;
   margin-bottom: 16px;
-  border-bottom: 1px solid black;
 
   > nav {
     display: flex;
+    padding: 0 20px;
+    font-size: 20px;
+    font-weight: 600;
   }
 `;
 export const StaledLink = styled(NavLink)`

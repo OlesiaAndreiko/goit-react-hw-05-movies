@@ -1,4 +1,4 @@
-import { SearchMovie } from '../components/SearchMovie/SearchBar';
+import { SearchBar } from '../components/SearchBar/SearchBar';
 import * as TMDB from '../api-service/film-service';
 import defaulImage from '../helpers/cat-6747298_960_720.jpg'
 import { Link, useSearchParams} from 'react-router-dom';
@@ -36,7 +36,7 @@ const Movies = () => {
 
   return (
     <main>
-      <SearchMovie onSearch={getQuery} ></SearchMovie>
+      <SearchBar onSearch={getQuery} ></SearchBar>
       <ul>
         {movieList?
         movieList.map(film =>
