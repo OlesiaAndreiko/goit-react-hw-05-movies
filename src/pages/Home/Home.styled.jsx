@@ -2,14 +2,13 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const HomeCaption = styled.h2`
-color: #141314;
-`
+  color: #141314;
+`;
 
 export const TrendingList = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-
 `;
 export const TrendingItem = styled.li`
   display: flex;
@@ -36,9 +35,9 @@ export const StyledLink = styled(NavLink)`
 `;
 
 export const PreviewPoster = styled.img`
-display: block;
-   width: 100%;
-  height: auto;  
+  display: block;
+  width: 100%;
+  height: auto;
   object-fit: cover;
   padding-bottom: 12px;
 `;

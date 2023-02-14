@@ -19,20 +19,13 @@ export const BackLink = styled(NavLink)`
 export const MovieCard = styled.div`
   display: flex;
   gap: 20px;
-  /* color: #8c8c8c; */
-`
+`;
 
-export const MoviePoster = styled.div`
-  /* display: flex; */
-` 
-export const MovieDescription= styled.div`
+export const MovieDescription = styled.div`
   display: flex;
   flex-direction: column;
   color: #250c27;
-` 
-export const MovieCaption = styled.h2`
-
-`
+`;
 
 export const StyledLink = styled(NavLink)`
   display: block;
@@ -43,9 +36,9 @@ export const StyledLink = styled(NavLink)`
   color: black;
   font-weight: 500;
   padding: 10px 20px;
-    font-size: 18px;
-    font-weight: 700;
-    text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
 
   &.active {
     color: #1a39a0;
@@ -55,11 +48,11 @@ export const StyledLink = styled(NavLink)`
 export const DetalisList = styled.ul`
   display: flex;
   list-style: none;
-`
+`;
 
 export const TextDescription = styled.p`
   color: #4a4646;
   font-size: 18px;
-    line-height: 1.67;
-    font-weight: 500;
-`
+  line-height: 1.67;
+  font-weight: 500;
+`;

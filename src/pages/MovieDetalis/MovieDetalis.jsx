@@ -7,9 +7,7 @@ import { useState, useEffect } from 'react';
 import {
   StyledLink,
   BackLink,
-  MovieCaption,
   MovieCard,
-  MoviePoster,
   MovieDescription,
   TextDescription,
   DetalisList,
@@ -49,19 +47,17 @@ const CurrentMovie = () => {
       {
         <>
           <MovieCard>
-            <MoviePoster>
-              <img
-                src={
-                  poster_path
-                    ? `http://image.tmdb.org/t/p/w500${poster_path}`
-                    : defaulImage
-                }
-                width="340px"
-                alt={title}
-              />
-            </MoviePoster>
+            <img
+              src={
+                poster_path
+                  ? `http://image.tmdb.org/t/p/w500${poster_path}`
+                  : defaulImage
+              }
+              width="340px"
+              alt={title}
+            />
             <MovieDescription>
-              <MovieCaption>{title}</MovieCaption>
+              <h2>{title}</h2>
               <TextDescription>
                 User score: <span>{vote_average} %</span>
               </TextDescription>

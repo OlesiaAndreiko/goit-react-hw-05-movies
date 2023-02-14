@@ -27,7 +27,7 @@ const Movies = () => {
         setMovieList(data);
       } catch (error) {
         console.log(error);
-        toast.error("Something is wrong, try again.");
+        toast.error('Something is wrong, try again.');
       }
     };
 
@@ -37,7 +37,7 @@ const Movies = () => {
   }, [query]);
 
   const getQuery = searchWord => {
-    const nextParams = searchWord !== '' ? { searchWord } : {}
+    const nextParams = searchWord !== '' ? { searchWord } : {};
     setSearchParams(nextParams);
   };
 
@@ -67,7 +67,7 @@ const Movies = () => {
             ))
           : null}
       </SearchList>
-      <Toaster/> 
+      <Toaster />
     </main>
   );
 };

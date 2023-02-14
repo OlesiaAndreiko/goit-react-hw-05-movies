@@ -5,7 +5,6 @@ export const SearchList = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-
 `;
 export const SearchItem = styled.li`
   display: flex;
@@ -32,9 +31,9 @@ export const StyledLink = styled(NavLink)`
 `;
 
 export const PreviewPoster = styled.img`
-display: block;
-   width: 100%;
-  height: auto;  
+  display: block;
+  width: 100%;
+  height: auto;
   object-fit: cover;
   padding-bottom: 12px;
 `;
