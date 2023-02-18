@@ -76,12 +76,12 @@ const MovieDetalis = () => {
       }
       <DetalisList>
         <li key="cast">
-          <StyledLink to="cast" state={{ from: '/' }}>
+          <StyledLink to="cast" state={{ from: `${backLinkHref}` }}>
             Cast
           </StyledLink>
         </li>
         <li key="reviews">
-          <StyledLink to="reviews" state={{ from: '/' }}>
+          <StyledLink to="reviews" state={{ from: `${backLinkHref}` }}>
             Reviews
           </StyledLink>
         </li>
